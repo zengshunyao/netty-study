@@ -28,6 +28,7 @@ public class ChatServer {
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
                     .option(ChannelOption.SO_BACKLOG, 1024)
+                    .handler(null)//权限控制
                     .childHandler(
                             new ChannelInitializer<SocketChannel>() {
                                 @Override
